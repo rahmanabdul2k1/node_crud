@@ -1,0 +1,27 @@
+html(lang='en')  
+    head
+        title= title
+        link(rel="stylesheet" href="/bootstrap/css/bootstrap.min.css")
+        script(src="js/bootstrap.min.js") 
+    body
+    div.container.col-sm-12.col-lg-8.mt-5
+        div.row.justify-content-center
+            div.col-md-12.col-lg-12.col-xl-8.col-xxl-4
+                form(action=`/update_user/${data[0].id}` method="post" enctype="multipart/form-data")
+                    div.d-flex.mb-5.justify-content-around
+                        h3 Update User
+                        a(href="/" class="btn btn-primary" role="button") Back
+                    div.form-floating.mt-4
+                        input(type="text" name="name" value=data[0].name class="form-control" placeholder="Name")
+                        label Name
+                    div.form-floating.mt-4
+                        input(type="email" name="email" value=data[0].email class="form-control" placeholder="Email")
+                        label Email
+                    div.form-floating.mt-4
+                        input(type="number" name="phone" value=data[0].phone class="form-control" placeholder="Phone")
+                        label Phone
+                    div.form-floating.mt-4
+                        input(type="text" name="password" value=data[0].password class="form-control" placeholder="Password")
+                        label Password
+                    div.mt-4
+                        button(type="submit" class="btn btn-primary w-100") Submit

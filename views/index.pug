@@ -1,0 +1,38 @@
+html(lang='en')  
+  head
+    title= title
+    link(rel="stylesheet" href="/bootstrap/css/bootstrap.min.css")
+    script(src="js/bootstrap.min.js") 
+  body
+div.container.mt-5
+  div.text-center.d-flex.mb-3
+    div.me-auto.p-2
+    div.text-center.p-2
+      h2.text-center User Details
+    div.ms-auto.p-2
+      a(href="/add_users" class="btn btn-primary") Add Users
+
+  div.table-responsive
+    table.table.table-hover.caption-top
+      caption List of users
+      thead
+        tr
+          th ID
+          th Name
+          th Phone
+          th Email
+          th Password
+          th Edit
+          th Delete
+      tbody 
+        each employee in data
+          tr
+            td= employee.id
+            td= employee.name
+            td= employee.phone
+            td= employee.email
+            td= employee.password
+            td 
+              a(href=`/user_details/${employee.id}` class="btn btn-primary") Edit
+            td 
+              a(href=`/delete_user/${employee.id}` class="btn btn-danger") Delete
